@@ -8,6 +8,7 @@ namespace RabbitMq.Publisher.Exchanges
     {
         public static void Publish(this IModel channel)
         {
+            Console.WriteLine("Hello, Direct Publisher!");
             channel.QueueDeclare(queue: "message-test", durable: false, exclusive: false, autoDelete: false);
             var count = 1;
             while (true)
